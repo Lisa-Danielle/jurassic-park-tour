@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Jurassic Park Tour Planner</h1>
+    <p class="tagline">Design your ultimate prehistoric adventure!</p>
+  
+    <div class="main-sections">
+      <div class="section available-attractions">
+        <h2>Available Attractions</h2>
+        <ul id="attractionList">
+        </ul>
+      </div>
+  
+      <div class="section your-itinerary">
+        <h2>Your Itinerary</h2>
+        <p id="itineraryInstructionsBug" class="instruction">No attractions added yet. Get planning!</p>
+        <ul id="itineraryList">
+        </ul>
+        <button id="generateSummaryBtn">Generate Tour Summary</button>
+      </div>
+    </div>
+  
+    <div id="summarySection" class="section tour-summary">
+      <h2>Your Planned Tour Summary</h2>
+      <div id="tourSummaryContent">
+        <p>Your summary will appear here after you click 'Generate Tour Summary'.</p>
+      </div>
+      <button id="startNewTourBtn">Start New Tour</button>
+    </div>
+  
+    <div id="errorModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Error Encountered</h2>
+        <p id="modalMessage"></p>
+        <button class="modal-ok-button">OK</button>
+      </div>
+    </div>
+  </div>

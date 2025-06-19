@@ -1,0 +1,299 @@
+/* Import Google Fonts for a sleek look */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif; /* Modern sans-serif font */
+  background-color: #f5f7fa; /* Very light subtle background */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0; /* Remove default body margin */
+  padding: 30px 0; /* Add padding top/bottom for spacing */
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 40px; /* Increased padding */
+  border-radius: 12px; /* Softer rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* More pronounced, softer shadow */
+  width: 100%;
+  max-width: 1000px; /* Wider container */
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Increased space between sections */
+}
+
+h1 {
+  text-align: center;
+  color: #28a745; /* Jurassic Park green */
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif; /* Bolder, distinct font for titles */
+  font-size: 2.8em; /* Larger main title */
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  text-align: center;
+  color: #777;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8em;
+  border-bottom: 1px solid #e0e0e0; /* Lighter, more subtle border */
+  padding-bottom: 10px;
+}
+
+.main-sections {
+  display: flex;
+  gap: 30px; /* Space between columns */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: center; /* Center columns when wrapped */
+}
+
+.section {
+  flex: 1;
+  min-width: 400px; /* Increased min-width */
+  background-color: #fcfcfc; /* Slightly lighter background for sections */
+  padding: 25px; /* Increased padding */
+  border-radius: 8px; /* Consistent rounded corners */
+  border: 1px solid #f0f0f0; /* Very subtle border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle inner shadow for sections */
+}
+
+.available-attractions ul,
+.your-itinerary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.available-attractions li,
+.your-itinerary li {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0; /* Lighter border */
+  padding: 15px 20px; /* More padding */
+  margin-bottom: 12px; /* Increased margin */
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); /* Very light shadow */
+}
+
+.available-attractions li:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* More pronounced shadow on hover */
+}
+
+.attraction-name {
+  font-weight: 600; /* Bolder text */
+  color: #333;
+  font-size: 1.05em;
+}
+
+.add-btn {
+  background-color: #2196F3; /* Modern blue */
+  color: white;
+  border: none;
+  padding: 10px 18px; /* Larger padding */
+  border-radius: 25px; /* Pill-shaped buttons */
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.add-btn:hover {
+  background-color: #1976D2; /* Darker blue on hover */
+  transform: translateY(-1px); /* Subtle press effect */
+}
+
+#generateSummaryBtn {
+  display: block;
+  width: 100%;
+  padding: 15px; /* Larger padding */
+  background-color: #28a745; /* Jurassic Park green */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Consistent rounded corners */
+  cursor: pointer;
+  font-size: 1.2em; /* Larger font */
+  font-weight: bold;
+  margin-top: 25px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3); /* Green shadow */
+}
+
+#generateSummaryBtn:hover {
+  background-color: #218838; /* Darker green on hover */
+  box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Original .instruction for the P tag - Modified to remove box styling */
+.instruction {
+  font-style: italic;
+  color: #999;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 0.95em;
+  /* --- NEW/MODIFIED STYLES BELOW --- */
+  padding: 0; /* Remove padding */
+  border: none; /* Remove border */
+  background-color: transparent; /* Remove background color */
+  box-shadow: none; /* Remove any shadow */
+}
+
+
+.tour-summary {
+  display: none; /* Hidden until summary is generated */
+  background-color: #e6ffe6; /* Light green background */
+  border-color: #a3e6a6; /* Green border */
+  color: #155724; /* Dark green text */
+  padding: 30px; /* More padding */
+}
+
+.tour-summary p {
+  line-height: 1.6;
+  font-size: 1.15em;
+  margin-bottom: 10px;
+}
+
+.tour-summary ul {
+  list-style: disc inside;
+  padding-left: 20px;
+}
+.tour-summary li {
+    background: none; /* Remove list item specific background */
+    border: none; /* Remove list item specific border */
+    padding: 5px 0; /* Adjust padding */
+    box-shadow: none; /* Remove shadows */
+    margin-bottom: 5px; /* Adjust margin */
+    justify-content: flex-start; /* Align text to start */
+}
+
+
+#startNewTourBtn {
+  background-color: #6c757d; /* Muted grey */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 20px;
+  transition: background-color 0.2s ease;
+}
+
+#startNewTourBtn:hover {
+  background-color: #5a6268;
+}
+
+/* --- Modal Styling --- */
+.modal {
+  display: none; /* Corrected: Hidden by default, JS will change this to flex */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6); /* Darker overlay */
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px); /* Subtle blur effect behind modal */
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 40px; /* More padding */
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Softer corners */
+  width: 85%;
+  max-width: 450px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* Deeper shadow */
+  position: relative;
+  text-align: center;
+}
+
+.modal-content h2 {
+  color: #d9534f; /* Error red */
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8em;
+  border-bottom: none;
+}
+
+.modal-content p {
+  margin-bottom: 25px;
+  line-height: 1.6;
+  color: #555;
+  font-size: 1.05em;
+}
+
+.close-button {
+  color: #aaa;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 32px; /* Larger 'x' */
+  font-weight: 300; /* Lighter weight */
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #000; /* Darker on hover */
+}
+
+.modal-ok-button {
+  background-color: #2196F3; /* Consistent blue button */
+  color: white;
+  padding: 12px 25px; /* Larger padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.modal-ok-button:hover {
+  background-color: #1976D2;
+}
+
+/* Basic Responsiveness */
+@media (max-width: 800px) {
+  .main-sections {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section {
+    min-width: unset; /* Remove min-width to allow shrinking */
+    width: 95%; /* Adjust width for smaller screens */
+  }
+  .container {
+    padding: 20px;
+  }
+  h1 {
+      font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%;
+        padding: 25px;
+    }
+}
